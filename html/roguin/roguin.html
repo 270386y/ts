@@ -1,31 +1,18 @@
 <!DOCTYPE html>
+<html lang="ja">
 <head>
-    <title>ログイン-google</title>
+    <meta charset="UTF-8">
+    <title>Shift Me 起動画面</title>
     <link rel="stylesheet" href="roguin.css">
 </head>
 <body>
-    <center>
-            <div class="container">
-            <h1>ログイン</h1>
-            <p>作業を続けるには、ログインしてください。</p>
-            <p>ユーザー名</p>
-            <input type="text" id="username" class="textbox" placeholder="ユーザー名を入力">
-            <p>パスワード</p>
-            <input type="password" id="pass" class="textbox" placeholder="パスワードを入力">
-            <br><input type="checkbox" id="showpassword" onchange="showOrHide()" class="margin">
-            <span>パスワードを表示する</span>
-            <br><input type="button" value="ログイン" class="button margin" onclick="login()">
+    <div class="splash-screen">
+        <div class="logo-container">
+            <h1 class="logo-text">Shift<span>♡</span>Me</h1>
+            <p class="sub-text">シフト管理をもっと楽しく、もっと可愛く。</p>
+            <button id="start-button" class="start-button">はじめる</button>
         </div>
-        </center>
-        <div class="container2">
-            <center>
-            <h1>アカウント情報</h1>
-            </center>
-            <p id="user">ユーザー名：</p>
-            <p id="age">年齢:</p>
-            <p id="email">Eメール:</p>
-            <p id="password2">パスワード：</p>
-        </div>
-    
+    </div>
+    <script src="roguin.js"></script>
 </body>
-<script src="roguin.js"></script>
+</html>
