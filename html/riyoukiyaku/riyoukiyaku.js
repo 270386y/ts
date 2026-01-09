@@ -1,15 +1,16 @@
-// ボタンクリック時の動作定義
-document.addEventListener('DOMContentLoaded', () => {
-    const agreeBtn = document.getElementById('btn-agree');
-    const disagreeBtn = document.getElementById('btn-disagree');
+document.addEventListener('DOMContentLoaded', function() {
+    const agreeBtn = document.getElementById('agree-btn');
+    const disagreeBtn = document.getElementById('disagree-btn');
 
     // 同意するボタン
-    agreeBtn.addEventListener('click', () => {
-        alert('「同意する」が選択されました。');
+    agreeBtn.addEventListener('click', function() {
+        console.log("規約に同意しました");
+        // 次の画面（さっき作った選択画面など）へ移動
+        window.location.href = "select.html";
     });
 
     // 同意しないボタン
-    disagreeBtn.addEventListener('click', () => {
-        alert('「同意しない」が選択されました。');
+    disagreeBtn.addEventListener('click', function() {
+        alert("規約に同意いただけない場合は、アプリをご利用いただけません。");
     });
 });
