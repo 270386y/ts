@@ -1,107 +1,69 @@
-/* 全体のレイアウト */
-body {
+/* 全体のリセット */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+/* 背景色は共通の薄紫 */
+.background {
+    width: 100%;
+    height: 100vh;
+    background-color:rgb(180, 182, 255); 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
-/* 黄色のスマホフレーム */
-.phone-frame {
+/* 中央の白いカード */
+.terms-container {
     width: 320px;
-    height: 650px;
-    background-color: #fdfd96; /* 薄い黄色 */
-    border: 8px solid #333;
-    border-radius: 50px;
-    padding: 10px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    position: relative;
-}
-
-/* 紫色の画面 */
-.phone-screen {
-    width: 100%;
-    height: 100%;
-    background-color: #e6d5ff; /* 薄い紫色 */
-    border-radius: 40px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* ステータスバー（時計・ノッチ・アイコン） */
-.status-bar {
-    width: 90%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.notch {
-    width: 100px;
-    height: 25px;
-    background-color: #333;
-    border-radius: 0 0 15px 15px;
-}
-
-/* 白いカード部分 */
-.content-card {
-    width: 85%;
-    background-color: #ffffff;
-    border-radius: 40px;
-    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 40px; /* 大きめの角丸 */
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.title {
-    font-size: 32px;
-    margin-bottom: 30px;
+.terms-title {
+    font-size: 28px;
     color: #333;
+    margin-bottom: 30px;
 }
 
-.text-container {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.4;
+.terms-body {
+    font-size: 18px;
+    line-height: 1.6;
     color: #333;
     margin-bottom: 40px;
+    font-weight: bold;
 }
 
-.text-container p {
-    margin: 20px 0;
-}
-
-/* ボタンのデザイン */
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
 }
 
+/* ピンクのボタン（起動画面のスタイルを継承） */
 .pink-button {
-    width: 160px;
+    width: 180px;
     padding: 12px 0;
-    background-color: #f5a9d0; /* ピンク色 */
-    border: 2px solid #333;
-    border-radius: 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+    color: #333;
+    background-color: #ffb6d9; /* かわいいピンク */
+    border: 2px solid white;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-.pink-button:active {
-    transform: scale(0.95);
+.pink-button:hover {
+    transform: scale(1.05);
+    background-color: #ff99cc;
 }

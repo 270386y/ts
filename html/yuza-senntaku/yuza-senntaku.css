@@ -7,11 +7,11 @@ body, html {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
-/* 背景色は共通の薄紫 */
+/* 起動画面と同じ背景色 */
 .select-screen {
     width: 100%;
     height: 100vh;
-    background-color: rgb(215, 190, 255); /* 画像に近い少し明るめの紫 */
+    background-color: rgb(180, 182, 255); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,50 +19,53 @@ body, html {
 
 .content-container {
     text-align: center;
-    width: 100%;
 }
 
-/* 「あなたはどっち？」のテキスト */
 .question-text {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 50px;
-    font-weight: normal;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .button-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* ボタン同士の間隔 */
+    gap: 25px;
 }
 
-/* ボタンの共通スタイル */
-.select-button {
-    width: 220px;
-    padding: 15px 0;
-    font-size: 24px;
+/* 起動画面の「はじめる」ボタンと同じスタイル */
+.cute-button {
+    width: 250px;
+    padding: 12px 0;
+    font-size: 20px;
     font-weight: bold;
-    border: none;
-    border-radius: 12px;
+    color: white;
+    border: 2px solid white; /* 白枠 */
+    border-radius: 30px; /* 丸み */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 画像のような影 */
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.select-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* 被雇用者：薄いピンク */
+/* 被雇用者：ピンク系の半透明 */
 .employee {
-    background-color: #ffeef4;
-    color: #000;
+    background-color: rgba(255, 153, 204, 0.4);
 }
 
-/* 雇用者：薄い水色 */
+.employee:hover {
+    background-color: rgba(255, 153, 204, 0.8);
+    transform: scale(1.05);
+}
+
+/* 雇用者：水色系の半透明 */
 .employer {
-    background-color: #a2c8e8;
-    color: #000;
+    background-color: rgba(162, 200, 232, 0.4);
+}
+
+.employer:hover {
+    background-color: rgba(162, 200, 232, 0.8);
+    transform: scale(1.05);
 }
