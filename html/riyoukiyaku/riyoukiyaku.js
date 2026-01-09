@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     agreeBtn.addEventListener('click', function() {
         console.log("規約に同意しました");
         // 次の画面（さっき作った選択画面など）へ移動
-        window.location.href = "select.html";
+        window.location.href = "../yuza-senntaku/yuza-senntaku.html";
     });
 
     // 同意しないボタン
