@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ボタンがクリックされた時の処理
     startButton.addEventListener('click', function() {
         // ログイン画面へ移動
-        window.location.href = "main.html";
+        window.location.href = "../riyoukiyaku/riyoukiyaku.html";
     });
 });

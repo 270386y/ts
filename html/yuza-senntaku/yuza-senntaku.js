@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const employeeBtn = document.getElementById('employee-btn');
     const employerBtn = document.getElementById('employer-btn');
 
-    // 被雇用者ボタンが押されたとき
+    // 被雇用者ボタン
     employeeBtn.addEventListener('click', function() {
-        console.log("被雇用者が選択されました");
-        // ここに次の画面（ログイン画面など）への移動処理を書く
-        // window.location.href = "main.html";
+        console.log("被雇用者が選ばれました");
+        // ログイン画面へ移動
+        window.location.href = "main.html";
     });
 
-    // 雇用者ボタンが押されたとき
+    // 雇用者ボタン
     employerBtn.addEventListener('click', function() {
-        console.log("雇用者が選択されました");
-        // 雇用者用の画面へ移動する場合など
-        // window.location.href = "employer_main.html";
+        console.log("雇用者が選ばれました");
+        // ここも必要に応じて移動先を変えてください
+        window.location.href = "main.html";
     });
 });
