@@ -1,0 +1,112 @@
+/* 全体のリセット */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    background-color: #e1f0f9; /* 淡い水色 */
+    overflow: hidden; /* 全体はスクロールさせない */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* ヘッダー */
+.header {
+    padding: 40px 20px 20px;
+    background-color: #e1f0f9;
+}
+
+.company-name {
+    font-size: 32px;
+    color: #333;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* スクロール可能なメインコンテンツ */
+.main-content {
+    flex: 1;
+    overflow-y: auto; /* ここでスクロールを有効にする */
+    padding: 0 20px;
+    padding-bottom: 100px; /* 下部ボタンと被らないように余白 */
+}
+
+/* シフトカードのデザイン */
+.shift-card {
+    background-color: #a2c4e8; /* ボタンと同じ青色 */
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.date-title {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    font-weight: normal;
+}
+
+.employee-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.employee-list li {
+    font-size: 18px;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* リストの点（・）を再現 */
+.employee-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+.dot-spacer {
+    text-align: center;
+    color: #333;
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+/* ナビゲーションバー */
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e1f0f9;
+    padding: 15px 10px 30px; /* iPhoneの下部バーを考慮 */
+}
+
+.nav-button {
+    width: 30%;
+    height: 60px;
+    border-radius: 12px;
+    border: none;
+    background-color: #a2c4e8;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.nav-button.active {
+    background-color: #8fb9e0; /* 現在のページを少し濃く */
+}
+
+.nav-button:active {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
