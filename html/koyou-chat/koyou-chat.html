@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャット一覧 - ほてる小柳津</title>
+    <link rel="stylesheet" href="koyou-chat.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="page-title">チャット</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="chat-list">
+                <div class="chat-item" data-user="鈴木 太郎">
+                    <p class="chat-text">鈴木 太郎：了解しました！</p>
+                </div>
+
+                <div class="chat-item" data-user="福尾 太郎">
+                    <p class="chat-text">福尾 太郎：10時から出勤です</p>
+                </div>
+
+                <div class="chat-item" data-user="柴田 太郎">
+                    <p class="chat-text">柴田 太郎：</p>
+                </div>
+
+                <div class="chat-item" data-user="佐藤 花子">
+                    <p class="chat-text">佐藤 花子：お疲れ様です。</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="nav-bar">
+            <button id="chat-btn" class="nav-button active">Chat</button>
+            <button id="home-btn" class="nav-button">Home</button>
+            <button id="employee-btn" class="nav-button">Employee</button>
+        </footer>
+    </div>
+    <script src="koyou-chat.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Chatページへ
     chatBtn.addEventListener('click', function() {
-        window.location.href = "chat.html";
+        window.location.href = "../koyou-chat/koyou-chat.html";
     });
 
     // Home（現在のページなので再読み込み、または上部へスクロール）
