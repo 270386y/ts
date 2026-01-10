@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chatItems.forEach(item => {
         item.addEventListener('click', function() {
             // どの従業員のチャットか識別子を渡すことも可能（今回は固定の宛先へ）
-            window.location.href = "koyou-chat-kozin.html";
+            window.location.href = "../koyou-chat-kozin/koyou-chat-kozin.html";
         });
     });
 });

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鈴木 太郎 チャット - ほてる小柳津</title>
+    <link rel="stylesheet" href="koyou-chat-kozin.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="name-display">鈴木 太郎</div>
+        </header>
+
+        <main class="chat-main" id="chat-display">
+            <div class="message-row sent">
+                <div class="bubble">明日シフトは入れる？</div>
+            </div>
+
+            <div class="message-row received">
+                <div class="bubble">おけまる</div>
+            </div>
+
+            <div class="message-row sent">
+                <div class="bubble">ありがとう</div>
+            </div>
+        </main>
+
+        <footer class="footer-area">
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="メッセージを入力" class="text-input">
+                <button id="send-btn" class="send-btn">送信</button>
+            </div>
+
+            <nav class="nav-bar">
+                <button id="nav-chat" class="nav-button active">Chat</button>
+                <button id="nav-home" class="nav-button">Home</button>
+                <button id="nav-employee" class="nav-button">Employee</button>
+            </nav>
+        </footer>
+    </div>
+    <script src="koyou-chat-kozin.js"></script>
+</body>
+</html>
