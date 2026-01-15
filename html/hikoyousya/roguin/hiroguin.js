@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (userId && password) {
             // ログイン成功後の遷移先をここに書く（例: user-home.html）
-            alert('被雇用者としてログイン中: ' + userId);
+            window.location.href = "../home/hihome.html";
+
         } else {
             alert('User IDとPasswordを入力してください');
         }
