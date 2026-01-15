@@ -110,4 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初回のカレンダー描画を実行
     renderCalendar();
+
+    // ナビゲーションボタン
+    const navLinks = {
+        'nav-chat': "../chaattosen/chatsen.html",
+        'nav-home': "../home/hihome.html",
+        'nav-mypage': "../mypage/mypage.html"
+    };
 });

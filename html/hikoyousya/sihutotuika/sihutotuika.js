@@ -10,14 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "home.html"; // ホーム画面へ戻る
     });
 
-    // ナビゲーション
-    document.getElementById('nav-chat').addEventListener('click', () => {
-        window.location.href = "user_chat.html";
-    });
-    document.getElementById('nav-home').addEventListener('click', () => {
-        window.location.href = "home.html";
-    });
-    document.getElementById('nav-mypage').addEventListener('click', () => {
-        window.location.href = "user_mypage.html";
-    });
+    // ナビゲーションボタン
+    const navLinks = {
+        'nav-chat': '../chaattosen/chatsen.html',
+        'nav-home': '../home/hihome.html',
+        'nav-mypage': '../mypage/mypage.html'
+    };
 });

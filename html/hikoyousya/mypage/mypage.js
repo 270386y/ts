@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "logout.html";
     });
 
-    // ナビゲーション
+    // ナビゲーションボタン
     const navLinks = {
-        'nav-chat': 'chatsen.html',
-        'nav-home': 'home.html',
-        'nav-mypage': 'mypage.html'
+        'nav-chat': '../chaattosen/chatsen.html',
+        'nav-home': '../home/hihome.html',
+        'nav-mypage': '../mypage/mypage.html'
     };
 
     Object.keys(navLinks).forEach(id => {
