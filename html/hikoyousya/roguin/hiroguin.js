@@ -1,20 +1,22 @@
-// スクロール時のアニメーション
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.container');
-    const scrollPos = window.innerHeight / 1.2;
+document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.getElementById('login-button');
+    const backButton = document.getElementById('back-button');
 
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < scrollPos) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
+    // Loginボタン
+    loginButton.addEventListener('click', function() {
+        const userId = document.getElementById('user-id').value;
+        const password = document.getElementById('password').value;
+
+        if (userId && password) {
+            // ログイン成功後の遷移先をここに書く（例: user-home.html）
+            alert('被雇用者としてログイン中: ' + userId);
+        } else {
+            alert('User IDとPasswordを入力してください');
         }
     });
-});
 
-// 初期状態の設定
-document.querySelectorAll('.container').forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(20px)";
-    section.style.transition = "all 0.6s ease-out";
+    // もどるボタン
+    backButton.addEventListener('click', function() {
+        window.history.back();
+    });
 });
