@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. 追加ボタンの遷移
     const addButton = document.getElementById('add-btn');
     addButton.addEventListener('click', function() {
-        window.location.href = "koyou-hikoyou-touroku.html";
+        window.location.href = "../koyou-hikoyou-touroku/koyou-hikoyou-touroku.html";
     });
 
     // 2. ✖ボタン（削除）の遷移
     const deleteBtns = document.querySelectorAll('.delete-icon-btn');
     deleteBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            window.location.href = "koyou-hikoyou-sakujyo.html";
+            window.location.href = "../koyou-hikoyou-sakujyo/koyou-hikoyou-sakujyo.html";
         });
     });
 
