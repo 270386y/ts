@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シフトを追加 - Shift Me</title>
+    <link rel="stylesheet" href="sihutotuika.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="add-card-container">
+            <div class="add-card">
+                <button id="close-btn" class="close-icon">✖</button>
+                <h2 class="card-title">シフトを追加</h2>
+
+                <div class="input-section">
+                    <label class="input-label">日付</label>
+                    <div class="date-inputs">
+                        <input type="text" placeholder="----" class="pink-input year"> 年
+                        <input type="text" placeholder="--" class="pink-input month"> 月
+                        <input type="text" placeholder="--" class="pink-input day"> 日
+                    </div>
+
+                    <label class="input-label">時間</label>
+                    <div class="time-inputs">
+                        <input type="text" placeholder="00:00" class="pink-input time">
+                        <span class="tilde">〜</span>
+                        <input type="text" placeholder="00:00" class="pink-input time">
+                    </div>
+                </div>
+
+                <button id="add-submit-btn" class="submit-btn">追加</button>
+            </div>
+        </div>
+
+        <footer class="nav-bar">
+            <button id="nav-chat" class="nav-button">Chat</button>
+            <button id="nav-home" class="nav-button">Home</button>
+            <button id="nav-mypage" class="nav-button">My Page</button>
+        </footer>
+    </div>
+    <script src="sihutotuika.js"></script>
+</body>
+</html>
