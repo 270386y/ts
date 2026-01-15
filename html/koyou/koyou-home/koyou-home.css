@@ -5,7 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    background-color: #e1f0f9; /* 淡い水色 */
+    background-color: #e1f0f9;
     overflow: hidden; /* 全体はスクロールさせない */
 }
 
@@ -28,7 +28,7 @@ body, html {
     font-weight: normal;
 }
 
-/* スクロール可能なメインコンテンツ */
+/* スクロール可能 */
 .main-content {
     flex: 1;
     overflow-y: auto; /* ここでスクロールを有効にする */
@@ -38,7 +38,7 @@ body, html {
 
 /* シフトカードのデザイン */
 .shift-card {
-    background-color: #a2c4e8; /* ボタンと同じ青色 */
+    background-color: #a2c4e8;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 25px;
@@ -64,7 +64,6 @@ body, html {
     padding-left: 20px;
 }
 
-/* リストの点（・）を再現 */
 .employee-list li::before {
     content: "•";
     position: absolute;
@@ -85,7 +84,7 @@ body, html {
     justify-content: space-around;
     align-items: center;
     background-color: #e1f0f9;
-    padding: 15px 10px 30px; /* iPhoneの下部バーを考慮 */
+    padding: 15px 10px 30px;
 }
 
 .nav-button {
@@ -103,7 +102,7 @@ body, html {
 }
 
 .nav-button.active {
-    background-color: #8fb9e0; /* 現在のページを少し濃く */
+    background-color: #8fb9e0;
 }
 
 .nav-button:active {
