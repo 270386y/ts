@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ - Shift Me</title>
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="mypage-header">
+            <h1 class="header-title">マイページ</h1>
+            <button id="noti-btn" class="noti-button">
+                通知 <span class="noti-circle"></span>
+            </button>
+        </header>
+
+        <main class="mypage-content">
+            <div class="profile-card">
+                <h2 class="user-name">鈴木 太郎</h2>
+
+                <div class="info-group">
+                    <label class="info-label">電話番号</label>
+                    <div class="info-display">090-1234-5678</div>
+
+                    <label class="info-label">住所</label>
+                    <div class="info-display">静岡県静岡市葵区1-2-3</div>
+
+                    <label class="info-label">所属会社</label>
+                    <div class="info-display">ほてる小柳津</div>
+                </div>
+            </div>
+
+            <button id="logout-trigger" class="logout-action-btn">ログアウト</button>
+        </main>
+
+        <footer class="nav-bar">
+            <button id="nav-chat" class="nav-button">Chat</button>
+            <button id="nav-home" class="nav-button">Home</button>
+            <button id="nav-mypage" class="nav-button active">My Page</button>
+        </footer>
+    </div>
+    <script src="mypage.js"></script>
+</body>
+</html>
