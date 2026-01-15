@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Employeeページへ
     employeeBtn.addEventListener('click', function() {
-        window.location.href = "employee.html";
+        window.location.href = "../koyou-hikoyou/koyou-hikoyou.html";
     });
 });
