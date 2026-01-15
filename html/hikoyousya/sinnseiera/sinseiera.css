@@ -1,0 +1,59 @@
+/* 全体のリセット */
+body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    background-color: #f2cccb; /* 背景ピンク */
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex; flex-direction: column; height: 100vh;
+}
+
+/* 中央のエラーメッセージカード */
+.error-content {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    padding: 0 20px;
+}
+
+.error-card {
+    background-color: #fff0f5; /* 非常に薄いピンク/白 */
+    width: 90%; max-width: 360px;
+    padding: 60px 20px; border-radius: 40px;
+    position: relative; text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ✖ボタンのスタイル */
+.close-icon {
+    position: absolute; top: 15px; right: 25px;
+    background: none; border: none;
+    color: #ff85b2; font-size: 38px; font-weight: bold;
+    cursor: pointer; transition: transform 0.2s, color 0.2s;
+}
+
+.close-icon:hover { 
+    transform: scale(1.2) rotate(90deg); 
+    color: #ff5e99;
+}
+
+.error-text {
+    font-size: 24px; font-weight: bold; color: #333; margin: 0;
+}
+
+/* ナビゲーションバーの設定 */
+.nav-bar { display: flex; justify-content: space-around; padding: 10px 10px 30px; }
+
+.nav-button {
+    width: 30%; height: 60px; border-radius: 15px; border: none;
+    background-color: #fce4ec; font-size: 22px; font-weight: bold; font-family: serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ナビボタンのホバー演出 */
+.nav-button:hover { 
+    background-color: #f8bbd0; /* 少し濃いピンク */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
