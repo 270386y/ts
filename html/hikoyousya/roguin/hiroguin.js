@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (userId && password) {
             // ログイン成功後の遷移先をここに書く（例: user-home.html）
-            window.location.href = "../hihome/hihome.html";
+            window.location.href = "../home/hihome.html";
 
         } else {
             alert('User IDとPasswordを入力してください');

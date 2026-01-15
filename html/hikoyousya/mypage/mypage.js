@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ログアウトボタン
     document.getElementById('logout-trigger').addEventListener('click', () => {
-        window.location.href = "logout.html";
+        window.location.href = "../roguauto/roguauto.html";
     });
 
     // ナビゲーションボタン

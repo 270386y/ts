@@ -99,3 +99,44 @@ body, html {
 
 
 .cancel-icon:hover { transform: scale(1.2) rotate(90deg); }
+
+/* ボタンを表示するコンテナ */
+.add-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    /* ふわっと現れるアニメーション */
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* シフト追加ボタン本体 */
+.add-action-btn {
+    background-color: #ff85b2; /* 鮮やかなピンク */
+    color: #fff;
+    border: 3px solid #1a1a1a; /* 太い黒枠 */
+    border-radius: 25px;
+    padding: 12px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #1a1a1a; /* 立体的な影 */
+    transition: all 0.2s ease;
+}
+
+/* 触った時（ホバー） */
+.add-action-btn:hover {
+    background-color: #ff5e9c;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #1a1a1a;
+}
+
+/* 押した時（アクティブ） */
+.add-action-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #1a1a1a;
+}

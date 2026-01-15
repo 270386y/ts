@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chatItems.forEach(item => {
         item.addEventListener('click', () => {
             const target = item.getAttribute('data-target');
-            // 実際は target ごとに URL を分けるかパラメータを渡す
-            alert(`${target}とのチャットに移動します`);
-            window.location.href = "user_chat_kozin.html"; 
+            window.location.href = "../chatto/chat.html"; 
         });
     });
 

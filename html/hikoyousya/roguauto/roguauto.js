@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.opacity = '0';
                 item.style.transform = 'scale(0.8)';
                 setTimeout(() => {
-                    item.remove();
+                    window.location.href = "../../kidou/kidou.html";
                 }, 300);
             }
         });

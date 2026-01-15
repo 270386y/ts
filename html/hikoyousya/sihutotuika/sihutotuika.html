@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>シフトを追加 - Shift Me</title>
+    <title>シフト追加 - Shift Me</title>
     <link rel="stylesheet" href="sihutotuika.css">
 </head>
 <body>
     <div class="app-container">
-        <div class="add-card-container">
-            <div class="add-card">
-                <button id="close-btn" class="close-icon">✖</button>
-                <h2 class="card-title">シフトを追加</h2>
+        <header class="header">
+            <button class="back-btn" onclick="history.back()">＜</button>
+            <h1 class="title">シフト追加</h1>
+        </header>
 
-                <div class="input-section">
-                    <label class="input-label">日付</label>
-                    <div class="date-inputs">
-                        <input type="text" placeholder="----" class="pink-input year"> 年
-                        <input type="text" placeholder="--" class="pink-input month"> 月
-                        <input type="text" placeholder="--" class="pink-input day"> 日
-                    </div>
-
-                    <label class="input-label">時間</label>
-                    <div class="time-inputs">
-                        <input type="text" placeholder="00:00" class="pink-input time">
-                        <span class="tilde">〜</span>
-                        <input type="text" placeholder="00:00" class="pink-input time">
-                    </div>
-                </div>
-
-                <button id="add-submit-btn" class="submit-btn">追加</button>
+        <main class="main-content">
+            <div class="input-group">
+                <label>選択した日付</label>
+                <div id="display-date" class="info-display">----年--月--日</div>
             </div>
-        </div>
 
-        <footer class="nav-bar">
-            <button id="nav-chat" class="nav-button">Chat</button>
-            <button id="nav-home" class="nav-button">Home</button>
-            <button id="nav-mypage" class="nav-button">My Page</button>
-        </footer>
+            <div class="input-group">
+                <label>勤務先</label>
+                <div class="select-wrapper">
+                    <select class="pink-input" id="company-select">
+                        <option value="ほてる小柳津">ほてる小柳津</option>
+                        <option value="ナリタモータース">ナリタモータース</option>
+                    </select>
+                    <span class="select-arrow">▽</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>勤務時間</label>
+                <div class="time-range">
+                    <input type="time" class="pink-input" id="start-time" step="600">
+                    <span class="separator">〜</span>
+                    <input type="time" class="pink-input" id="end-time" step="600">
+                </div>
+            </div>
+
+            <button class="submit-btn" id="submit-shift">この内容で追加する</button>
+        </main>
     </div>
     <script src="sihutotuika.js"></script>
 </body>
