@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     employeeBtn.addEventListener('click', function() {
-        window.location.href = "koyou-em.html";
+        window.location.href = "../koyou-hikoyou/koyou-hikoyou.html";
     });
 
     // 2. 個人チャットへの遷移
