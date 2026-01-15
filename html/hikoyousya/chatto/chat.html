@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャット - Shift Me</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="chat-header">
+            <button id="back-btn" class="back-icon">◀</button>
+            <h1 class="chat-title">ほてる小柳津</h1>
+        </header>
+
+        <main class="chat-timeline" id="chat-timeline">
+            <div class="message received">
+                <div class="bubble">明日シフト入れる？</div>
+                <span class="time">10:00</span>
+            </div>
+
+            <div class="message sent">
+                <div class="bubble">おけまる</div>
+                <span class="time">10:05</span>
+            </div>
+
+            <div class="message received">
+                <div class="bubble">ありがとう！助かる！</div>
+                <span class="time">10:10</span>
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="メッセージを入力..." class="text-input">
+                <button id="send-btn" class="send-btn">送信</button>
+            </div>
+        </footer>
+
+        <div class="nav-bar">
+            <button id="nav-chat" class="nav-button active">Chat</button>
+            <button id="nav-home" class="nav-button">Home</button>
+            <button id="nav-mypage" class="nav-button">My Page</button>
+        </div>
+    </div>
+    <script src="chat.js"></script>
+</body>
+</html>
