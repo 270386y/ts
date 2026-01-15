@@ -33,6 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('nav-employee').addEventListener('click', function() {
-        window.location.href = "../koyou-em.html";
+        window.location.href = "../koyou-hikoyou/koyou-hikoyou.html";
     });
 });
