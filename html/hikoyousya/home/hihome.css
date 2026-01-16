@@ -1,136 +1,142 @@
-/* 全体のリセット */
-body, html { 
-    margin: 0; 
-    padding: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: #f2cccb; /* 背景の薄いピンク */
-    overflow: hidden; 
+/* 全体設定 */
+body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    background-color: #f2cccb; /* 背景薄ピンク */
+    overflow: hidden;
 }
 
-.app-container { 
-    display: flex; 
-    flex-direction: column; 
-    height: 100vh; 
+.app-container { display: flex; flex-direction: column; height: 100vh; }
+
+/* カレンダーデザイン */
+.calendar-section {
+    background-color: #fff; margin: 30px 20px 15px; padding: 15px;
+    border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* カレンダー部分 */
-.calendar-section { 
-    background: #fff; 
-    margin: 60px 20px 20px; 
-    padding: 10px; 
-    border-radius: 5px; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+.calendar-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 10px; margin-bottom: 10px; border-bottom: 2px dashed #ffc1d6;
 }
 
-.calendar-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    font-size: 12px; 
-    text-align: center; 
+.calendar-header span { font-size: 16px; font-weight: bold; color: #333; }
+
+.cal-btn {
+    background-color: #fce4ec; border: none; color: #ff85b2;
+    width: 30px; height: 30px; border-radius: 50%; font-weight: bold;
+    cursor: pointer; transition: all 0.2s;
+}
+.cal-btn:hover { background-color: #ff85b2; color: #fff; }
+
+.calendar-table { width: 100%; border-collapse: separate; text-align: center; }
+.calendar-table th { padding: 5px 0; color: #888; font-size: 12px; }
+.sun { color: #ff8a8a !important; } .sat { color: #8a8aff !important; }
+
+/* 日付セルとハート演出 */
+.calendar-table td {
+    position: relative; width: 40px; height: 40px; cursor: pointer;
+    font-weight: bold; z-index: 1; transition: color 0.3s; vertical-align: middle;
 }
 
-.calendar-table th, .calendar-table td { 
-    padding: 8px 0; 
-    border: 0.5px solid #f0f0f0; 
+.calendar-table td:not(:empty)::before {
+    content: ""; position: absolute;
+    top: 68%; left: 60%; /* 決定した位置 */
+    transform: translate(-50%, -50%) scale(0);
+    width: 34px; height: 34px; background-color: #ff85b2; /* 濃いピンク */
+    clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+    z-index: -1; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.sun { color: #ff8a8a; } 
-.sat { color: #8a8aff; }
-
-/* --- シフトカードの修正（色を濃く、枠を太く） --- */
-.shift-list { 
-    flex: 1; 
-    overflow-y: auto; 
-    padding: 0 25px 100px; 
+/* ホバー & 選択時のハート */
+.calendar-table td:not(:empty):hover, .calendar-table td.selected { color: #fff; }
+.calendar-table td:not(:empty):hover::before, .calendar-table td.selected::before {
+    transform: translate(-50%, -50%) scale(1.8); opacity: 1;
 }
 
+/* シフトカード */
+.shift-list { flex: 1; overflow-y: auto; padding: 0 20px 100px; }
 .shift-card {
-    background-color: #ff85b2; /* より鮮やかで濃いピンクに変更 */
-    border-radius: 25px; 
-    padding: 15px 20px;
-    margin-bottom: 25px; 
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    color: #fff; 
-    border: 3px solid #1a1a1a; /* 枠線を太く・黒く強調 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #ff85b2; /* 鮮やかなピンク */
+    border-radius: 20px; padding: 15px 20px; margin-bottom: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    color: #fff; border: 3px solid #1a1a1a; /* 太い黒枠 */
+}
+.shift-date { font-size: 18px; font-weight: bold; color: #ffebf2; margin: 0; }
+.company-name { font-size: 16px; margin: 5px 0; font-weight: bold; }
+.shift-time { font-size: 20px; font-weight: bold; margin: 0; }
+
+.status-btn { border-radius: 8px; border: 2px solid #1a1a1a; padding: 5px 10px; font-weight: bold; cursor: pointer; }
+.status-btn.green { background-color: #9cd49c; } /* 承諾済み */
+.status-btn.blue { background-color: #b4d4e4; }  /* 承諾待ち */
+.cancel-icon { color: #ff0000; font-size: 30px; font-weight: bold; margin-left: 10px; cursor: pointer; }
+
+/* ナビゲーションバー */
+.nav-bar { display: flex; justify-content: space-around; padding: 10px 10px 30px; }
+.nav-button {
+    width: 30%; height: 60px; border-radius: 15px; border: none;
+    background-color: #fce4ec; font-size: 20px; font-weight: bold; cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: all 0.3s;
+}
+.nav-button.active { background-color: #f8bbd0; }
+.nav-button:hover { background-color: #f8bbd0; transform: translateY(-3px); }
+
+/* キャンセルボタンのスタイル（ボタンとして再定義） */
+.cancel-icon {
+    background: none;        /* ボタンのデフォルト背景を透明に */
+    border: none;            /* ボタンの枠線を消す */
+    padding: 0;              /* 余計な余白を消す */
+    color: #ff0000;          /* 鮮やかな赤色 */
+    font-size: 30px;         /* 大きめのサイズ */
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;         /* マウスを合わせると指マークに */
+    /* 滑らかなアニメーションの設定 */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* シフトカードへのホバー効果 */
-.shift-card:hover {
-    background-color: #ff5e99; /* マウスを乗せるとさらに濃くなる */
-    transform: scale(1.02);
+
+.cancel-icon:hover { transform: scale(1.2) rotate(90deg); }
+
+/* ボタンを表示するコンテナ */
+.add-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    /* ふわっと現れるアニメーション */
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* シフト追加ボタン本体 */
+.add-action-btn {
+    background-color: #ff85b2; /* 鮮やかなピンク */
+    color: #fff;
+    border: 3px solid #1a1a1a; /* 太い黒枠 */
+    border-radius: 25px;
+    padding: 12px 50px;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
-}
-
-.shift-date { font-size: 20px; color: #ffebf2; font-weight: bold; }
-.company-name { font-size: 18px; font-weight: bold; }
-.shift-time { font-size: 22px; font-weight: bold; letter-spacing: 1px; }
-
-/* ステータスボタン */
-.status-btn { 
-    border-radius: 10px; 
-    border: 2px solid #1a1a1a; 
-    padding: 6px 12px; 
-    font-weight: bold; 
-    font-size: 15px;
+    box-shadow: 0 5px 0 #1a1a1a; /* 立体的な影 */
     transition: all 0.2s ease;
 }
 
-.status-btn.green { background-color: #9cd49c; } /* 承諾済み */
-.status-btn.blue { background-color: #b4d4e4; }  /* 承諾待ち */
-
-.status-btn:hover {
-    filter: brightness(1.1);
+/* 触った時（ホバー） */
+.add-action-btn:hover {
+    background-color: #ff5e9c;
     transform: translateY(-2px);
-    cursor: pointer;
+    box-shadow: 0 7px 0 #1a1a1a;
 }
 
-/* キャンセルアイコン ✖ */
-.cancel-icon { 
-    color: #ff0000; 
-    font-size: 35px; 
-    font-weight: bold; 
-    margin-left: 10px; 
-    cursor: pointer;
-    transition: transform 0.2s;
-    display: inline-block;
-}
-
-.cancel-icon:hover { 
-    transform: scale(1.3) rotate(10deg); 
-}
-
-/* ナビゲーションバー */
-.nav-bar { 
-    display: flex; 
-    justify-content: space-around; 
-    padding: 10px 10px 30px; 
-}
-
-.nav-button {
-    width: 30%; 
-    height: 65px; 
-    border-radius: 18px; 
-    border: none;
-    background-color: #fce4ec; 
-    font-size: 22px; 
-    font-weight: bold; 
-    font-family: serif;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.nav-button.active { 
-    background-color: #f8bbd0; /* 現在地の色 */
-}
-
-.nav-button:hover {
-    background-color: #f8bbd0;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    transform: translateY(-4px);
-    cursor: pointer;
+/* 押した時（アクティブ） */
+.add-action-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #1a1a1a;
 }

@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.history.back();
     });
 
-    // ナビゲーション遷移
+   // ナビゲーションボタン
     const navLinks = {
-        'nav-chat': 'user_chat.html',
-        'nav-home': 'home.html',
-        'nav-mypage': 'user_mypage.html'
+        'nav-chat': '../chaattosen/chatsen.html',
+        'nav-home': '../home/hihome.html',
+        'nav-mypage': '../mypage/mypage.html'
     };
 
     Object.keys(navLinks).forEach(id => {

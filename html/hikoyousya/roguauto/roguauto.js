@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.opacity = '0';
                 item.style.transform = 'scale(0.8)';
                 setTimeout(() => {
-                    item.remove();
+                    window.location.href = "../../kidou/kidou.html";
                 }, 300);
             }
         });
     });
 
-    // ナビゲーション遷移
+    // ナビゲーションボタン
     const navLinks = {
-        'nav-chat': 'chatsen.html',
-        'nav-home': 'home.html',
-        'nav-mypage': 'user_mypage.html'
+        'nav-chat': '../chaattosen/chatsen.html',
+        'nav-home': '../home/hihome.html',
+        'nav-mypage': '../mypage/mypage.html'
     };
 
     Object.keys(navLinks).forEach(id => {

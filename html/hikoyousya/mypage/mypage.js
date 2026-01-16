@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ログアウトボタン
     document.getElementById('logout-trigger').addEventListener('click', () => {
-        window.location.href = "logout.html";
+        window.location.href = "../roguauto/roguauto.html";
     });
 
-    // ナビゲーション
+    // ナビゲーションボタン
     const navLinks = {
-        'nav-chat': 'chatsen.html',
-        'nav-home': 'home.html',
-        'nav-mypage': 'mypage.html'
+        'nav-chat': '../chaattosen/chatsen.html',
+        'nav-home': '../home/hihome.html',
+        'nav-mypage': '../mypage/mypage.html'
     };
 
     Object.keys(navLinks).forEach(id => {

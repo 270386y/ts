@@ -10,7 +10,9 @@
     <div class="app-container">
         <div class="calendar-section">
             <div class="calendar-header">
-                <span id="calendar-month">2025年 11月</span>
+                <button id="prev-month" class="cal-btn">＜</button>
+                <span id="calendar-month"></span>
+                <button id="next-month" class="cal-btn">＞</button>
             </div>
             <table class="calendar-table">
                 <thead>
@@ -18,32 +20,35 @@
                         <th class="sun">日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th class="sat">土</th>
                     </tr>
                 </thead>
-                <tbody id="calendar-body">
-                    </tbody>
+                <tbody id="calendar-body"></tbody>
             </table>
         </div>
 
-        <main class="shift-list">
-            <div class="shift-card approved">
+        <div id="add-btn-container" class="add-btn-container" style="display: none;">
+            <button class="add-action-btn" onclick="location.href='../sihutotuika/sihutotuika.html'">
+                ＋ シフト追加
+            </button>
+        </div>
+
+        <main class="shift-list" id="shift-list">
+            <div class="shift-card" data-date="11" data-month="1">
                 <div class="shift-info">
-                    <p class="shift-date">11月11日</p>
+                    <p class="shift-date"><span class="card-date-text">1月11日</span></p>
                     <p class="company-name">ほてる小柳津</p>
                     <p class="shift-time">10:00〜15:00</p>
                 </div>
-                <div class="status-area">
-                    <button class="status-btn green">承諾済み</button>
-                </div>
+                <button class="status-btn green">承諾済み</button>
             </div>
 
-            <div class="shift-card pending">
+            <div class="shift-card" data-date="13" data-month="1">
                 <div class="shift-info">
-                    <p class="shift-date">11月13日</p>
+                    <p class="shift-date"><span class="card-date-text">1月13日</span></p>
                     <p class="company-name">ナリタモータース</p>
                     <p class="shift-time">9:00〜12:00</p>
                 </div>
                 <div class="status-area">
                     <button class="status-btn blue">承諾待ち</button>
-                    <span class="cancel-icon">✖</span>
+                    <button class="cancel-icon">✖</button>
                 </div>
             </div>
         </main>
@@ -54,6 +59,9 @@
             <button id="nav-mypage" class="nav-button">My Page</button>
         </footer>
     </div>
+
+    
+
     <script src="hihome.js"></script>
 </body>
 </html>

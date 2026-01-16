@@ -4,17 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     chatItems.forEach(item => {
         item.addEventListener('click', () => {
             const target = item.getAttribute('data-target');
-            // 実際は target ごとに URL を分けるかパラメータを渡す
-            alert(`${target}とのチャットに移動します`);
-            window.location.href = "user_chat_kozin.html"; 
+            window.location.href = "../chatto/chat.html"; 
         });
     });
 
-    // ナビゲーション遷移
+    // ナビゲーションボタン
     const navLinks = {
-        'nav-chat': 'chatsen.html',
-        'nav-home': 'home.html',
-        'nav-mypage': 'user_mypage.html'
+        'nav-chat': '../chaattosen/chatsen.html',
+        'nav-home': '../home/hihome.html',
+        'nav-mypage': '../mypage/mypage.html'
     };
 
     Object.keys(navLinks).forEach(id => {
