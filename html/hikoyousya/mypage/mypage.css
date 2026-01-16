@@ -18,17 +18,31 @@ body, html {
 
 .header-title { font-size: 28px; font-weight: normal; color: #333; margin: 0; }
 
+/* 通知ボタン */
 .noti-button {
     background-color: #fff; border: none; border-radius: 10px;
-    padding: 8px 15px; font-size: 18px; font-weight: bold;
-    display: flex; align-items: center; gap: 8px;
+    padding: 8px 12px; /* 横幅を少し調整 */
+    font-size: 18px; font-weight: bold;
+    display: flex; align-items: center; gap: 6px; /* 文字とアイコンの間隔 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: all 0.3s ease;
 }
 
-.noti-button:hover { background-color: #fce4ec; transform: scale(1.05); }
+/* 鈴アイコンのスタイル */
+.bell-icon {
+    width: 22px; height: 22px;
+    fill: #f8bbd0; /* 元の丸と同じピンク色 */
+    transition: transform 0.3s ease;
+}
 
-.noti-circle {
-    width: 15px; height: 15px; background-color: #f8bbd0; border-radius: 50%;
+/* ホバー時の動作 */
+.noti-button:hover {
+    background-color: #fce4ec;
+    transform: scale(1.05);
+}
+
+/* ホバー時に鈴を少し揺らす */
+.noti-button:hover .bell-icon {
+    transform: rotate(15deg) scale(1.1);
 }
 
 /* プロフィールカード */

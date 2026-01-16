@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     employeeBtn.addEventListener('click', function() {
         console.log("被雇用者が選ばれました");
         // ログイン画面へ移動
-        window.location.href = "main.html";
+        window.location.href = "../hikoyousya/roguin/hiroguin.html";
     });
 
     // 雇用者ボタン
