@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         if (companyId && password) {
-            alert('ログインを試みます: ' + companyId);
             // ここに実際のログイン処理や遷移先を記述します
+            window.location.href = '../koyou-home/koyou-home.html';
         } else {
             alert('IDとパスワードを入力してください');
         }
