@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "../koyou-chat/koyou-chat.html";
     });
 
-    // Home
+    // Home（一番上までスクロール）
     homeBtn.addEventListener('click', function() {
         document.querySelector('.main-content').scrollTo({
             top: 0,

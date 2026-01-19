@@ -1,12 +1,18 @@
-/* 全体のリセット */
+/* --- 全体のリセット --- */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    /* ヒラギノ角ゴに統一 */
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    background-color: #e1f0f9;
+    background-color: #e1f0f9; /* 背景：薄い水色 */
     overflow: hidden;
+}
+
+/* ボタンのフォントを強制的に継承させる */
+button {
+    font-family: inherit;
 }
 
 .app-container {
@@ -25,20 +31,32 @@ body, html {
 
 .page-title {
     font-size: 28px;
-    color: #333;
+    color: #1a1a1a;
     margin: 0;
-    font-weight: normal;
+    font-weight: bold;
 }
 
+/* 右上の「＋追加」ボタン */
 .add-button {
-    background-color: #a2c4e8;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 10px;
+    background-color: #a2c4e8; /* ボタンの水色 */
+    border: 3px solid #1a1a1a; /* 太い黒枠 */
+    padding: 8px 25px;
+    border-radius: 15px;
     font-size: 18px;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 0 #1a1a1a; /* 立体的な固い影 */
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #1a1a1a;
+}
+
+.add-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #1a1a1a;
 }
 
 /* メインコンテンツ（カード一覧） */
@@ -48,22 +66,25 @@ body, html {
     padding: 0 20px 100px;
 }
 
+/* 従業員カード（太枠・立体影） */
 .employee-card {
-    background-color: #a2c4e8;
+    background-color: #b3e5fc; /* シフトカードと同じ明るい水色 */
+    border: 3px solid #1a1a1a; /* 太い黒枠 */
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 25px;
-    position: relative; /* ✖ボタンの基準 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative; 
+    box-shadow: 0 5px 0 #1a1a1a; /* 立体的な固い影 */
 }
 
 .card-text p {
     margin: 5px 0;
     font-size: 18px;
-    color: #333;
+    color: #1a1a1a;
+    font-weight: bold; /* 文字も少しパキッと太めに */
 }
 
-/* ✖ボタン */
+/* ✖ボタン（ホバーで回転する演出） */
 .delete-icon-btn {
     position: absolute;
     top: 15px;
@@ -71,33 +92,58 @@ body, html {
     background: none;
     border: none;
     font-size: 35px;
-    color: #5c85b5;
+    color: #1a1a1a;
     font-weight: bold;
     cursor: pointer;
     line-height: 1;
+    transition: all 0.2s ease;
 }
 
-/* ナビゲーションバー */
+.delete-icon-btn:hover {
+    transform: scale(1.2) rotate(90deg);
+    color: #ff0000; /* ホバーで赤く */
+}
+
+/* --- ナビゲーションバー --- */
 .nav-bar {
     display: flex;
     justify-content: space-around;
-    padding: 15px 10px 30px;
+    padding: 10px 10px 30px;
     background-color: #e1f0f9;
 }
 
+/* ナビボタン（文字サイズ20px・ヒラギノ統一） */
 .nav-button {
     width: 30%;
     height: 60px;
-    border-radius: 12px;
-    border: none;
-    background-color: #a2c4e8;
-    font-size: 18px;
+    border-radius: 15px;
+    border: 3px solid #1a1a1a; /* 太い黒枠 */
+    background-color: #a2c4e8; /* 通常時の水色 */
+    color: #1a1a1a;
+    font-size: 20px; /* 他の画面とサイズを統一 */
     font-weight: bold;
-    font-family: serif;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: inherit; /* フォントを戻しました */
+    box-shadow: 0 5px 0 #1a1a1a; /* 固い影 */
     cursor: pointer;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* ホームボタンなど（デフォルトで色が変わる設定） */
 .nav-button.active {
-    background-color: #8fb9e0;
+    background-color: #4fc3f7; /* 鮮やかな水色 */
+}
+
+.nav-button:hover {
+    background-color: #4fc3f7;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #1a1a1a;
+}
+
+/* クリック時にカチッと沈む挙動 */
+.nav-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #1a1a1a;
 }
