@@ -3,8 +3,10 @@ spring:
     url: jdbc:mysql://localhost:3306/appdb?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Tokyo
     username: appuser
     password: apppass
+
+  flyway:
+    enabled: true
+
   jpa:
     hibernate:
-      ddl-auto: update
-  flyway:
-    enabled: false
+      ddl-auto: validate   # Flyway管理なのでupdateは使わない

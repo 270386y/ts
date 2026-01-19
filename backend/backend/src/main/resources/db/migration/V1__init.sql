@@ -1,0 +1,15 @@
+CREATE TABLE users (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  role VARCHAR(20) NOT NULL,
+  name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE shift_requests (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  work_date DATE NOT NULL,
+  start_time TIME NOT NULL,
+  end_time TIME NOT NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
+  CONSTRAINT fk_shift_requests_user FOREIGN KEY (user_id) REFERENCES users(id)
+);
