@@ -85,38 +85,16 @@ button {
 }
 
 /* --- ナビボタン（フォント修正済み） --- */
+.nav-bar { display: flex; justify-content: space-around; padding: 0 10px 30px; background-color: #e1f0f9; }
+
 .nav-button {
-    width: 30%;
-    height: 60px;
-    border-radius: 15px;
-    border: 3px solid #1a1a1a; /* 太い黒枠 */
-    background-color: #a2c4e8; /* 通常時のボタン */
-    color: #1a1a1a;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: serif; /* ←フォントをヒラギノに戻しました */
-    box-shadow: 0 5px 0 #1a1a1a; /* 固い影 */
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 30%; height: 60px; border-radius: 15px; border: none;
+    background-color: #b3e5fc; font-size: 22px; font-weight: bold; font-family: serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: all 0.3s ease; cursor: pointer;
 }
 
-/* 選択中のボタン（デフォルトでこの色になります） */
-.nav-button.active {
-    background-color: #4fc3f7; /* 鮮やかな水色 */
-}
-
-/* ホバー時 */
 .nav-button:hover {
-    background-color: #4fc3f7;
-    transform: translateY(-2px);
-    box-shadow: 0 7px 0 #1a1a1a;
+    background-color: #8fb9e0; transform: translateY(-4px);
 }
 
-/* 押した時（カチッとした沈み込み） */
-.nav-button:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 0 #1a1a1a;
-}
+.nav-button.active { background-color: #8fb9e0; }

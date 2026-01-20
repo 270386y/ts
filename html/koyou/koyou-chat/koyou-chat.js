@@ -1,22 +1,26 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. ナビゲーションボタンの遷移
-    const chatBtn = document.getElementById('chat-btn');
-    const homeBtn = document.getElementById('home-btn');
-    const employeeBtn = document.getElementById('employee-btn');
-
-    homeBtn.addEventListener('click', function() {
-        window.location.href = "../koyou-home/koyou-home.html";
-    });
-
-    employeeBtn.addEventListener('click', function() {
-        window.location.href = "../koyou-hikoyou/koyou-hikoyou.html";
-    });
-
-    // 2. 個人チャットへの遷移
+document.addEventListener('DOMContentLoaded', () => {
+    // チャット項目のクリックイベント
     const chatItems = document.querySelectorAll('.chat-item');
     chatItems.forEach(item => {
-        item.addEventListener('click', function() {
-            window.location.href = "../koyou-chat-kozin/koyou-chat-kozin.html";
+        item.addEventListener('click', () => {
+            const target = item.getAttribute('data-target');
+            window.location.href = "../koyou-chat-kozin/koyou-chat-kozin.html"; 
         });
+    });
+
+    // ナビゲーションボタン
+    const navLinks = {
+        'nav-chat': '../koyou-chat/koyou-chat.html',
+        'nav-home': '../koyou-home/koyou-home.html',
+        'nav-employee': '../koyou-hikoyou/koyou-hikoyou.html'
+    };
+
+    Object.keys(navLinks).forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            btn.addEventListener('click', () => {
+                window.location.href = navLinks[id];
+            });
+        }
     });
 });
