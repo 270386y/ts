@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 通知ボタン
     document.getElementById('noti-btn').addEventListener('click', () => {
-        window.location.href = "tuti.html";
+        window.location.href = "../tuuti/tuuti.html";
     });
 
     // ログアウトボタン
