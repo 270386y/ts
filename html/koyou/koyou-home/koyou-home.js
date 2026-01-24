@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const homeBtn = document.getElementById('home-btn');
     const employeeBtn = document.getElementById('employee-btn');
 
-    // Chatページへ
     chatBtn.addEventListener('click', function() {
         window.location.href = "../koyou-chat/koyou-chat.html";
     });
 
-    // Home（一番上までスクロール）
     homeBtn.addEventListener('click', function() {
         document.querySelector('.main-content').scrollTo({
             top: 0,
@@ -16,8 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Employeeページへ
     employeeBtn.addEventListener('click', function() {
         window.location.href = "../koyou-hikoyou/koyou-hikoyou.html";
+    });
+
+    document.querySelectorAll('.approve-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('承認しました');
+        });
+    });
+
+    document.querySelectorAll('.reject-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('却下しました');
+        });
     });
 });
