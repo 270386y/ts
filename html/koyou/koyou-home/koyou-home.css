@@ -94,30 +94,16 @@ body, html {
     cursor: pointer;
 }
 
-.nav-bar {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 10px 30px;
-    background-color: #e1f0f9;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
+.nav-bar { display: flex; justify-content: space-around; padding: 0 10px 30px; background-color: #e1f0f9; }
 
 .nav-button {
-    width: 30%;
-    height: 60px;
-    border-radius: 12px;
-    border: none;
-    background-color: #a2c4e8;
-    color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: serif;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 30%; height: 60px; border-radius: 15px; border: none;
+    background-color: #b3e5fc; font-size: 22px; font-weight: bold; font-family: serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: all 0.3s ease; cursor: pointer;
 }
 
-.nav-button.active {
-    background-color: #8fb9e0;
+.nav-button:hover {
+    background-color: #8fb9e0; transform: translateY(-4px);
 }
+
+.nav-button.active { background-color: #8fb9e0; }

@@ -2,8 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageInput = document.getElementById('message-input');
     const sendBtn = document.getElementById('send-btn');
     const chatTimeline = document.getElementById('chat-timeline');
+    const chatTitle = document.querySelector('.chat-title');
 
-    // メッセージ送信処理
+    const params = new URLSearchParams(window.location.search);
+    const targetId = params.get('id') || 'default';
+    const targetName = params.get('name') || 'チャット';
+    chatTitle.innerText = targetName;
+
+    loadChatHistory();
+
     function sendMessage() {
         const text = messageInput.value.trim();
         if (text === "") return;
@@ -11,54 +18,44 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
         const timeString = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
-        // 送信メッセージのHTMLを作成
-        const messageHtml = `
-            <div class="message sent">
-                <div class="bubble">${escapeHtml(text)}</div>
-                <span class="time">${timeString}</span>
-            </div>
-        `;
-
-        // タイムラインに追加
-        chatTimeline.insertAdjacentHTML('beforeend', messageHtml);
-
-        // 入力欄をクリア
+        saveMessage(text, 'sent', timeString);
+        renderMessage(text, 'sent', timeString);
+        
         messageInput.value = "";
-
-        // 一番下までスクロール
         chatTimeline.scrollTop = chatTimeline.scrollHeight;
     }
 
-    // XSS対策用のエスケープ関数
-    function escapeHtml(str) {
-        return str.replace(/[&<>"']/g, function(match) {
-            const escape = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#39;'
-            };
-            return escape[match];
-        });
+    function renderMessage(text, type, time) {
+        const messageHtml = `
+            <div class="message ${type}">
+                <div class="bubble">${escapeHtml(text)}</div>
+                <span class="time">${time}</span>
+            </div>
+        `;
+        chatTimeline.insertAdjacentHTML('beforeend', messageHtml);
     }
 
-    // 送信ボタンクリック時
+    function saveMessage(text, type, time) {
+        let history = JSON.parse(localStorage.getItem('koyou_history_' + targetId) || '[]');
+        history.push({ text, type, time });
+        localStorage.setItem('koyou_history_' + targetId, JSON.stringify(history));
+        localStorage.setItem('koyou_last_msg_' + targetId, text);
+    }
+
+    function loadChatHistory() {
+        const history = JSON.parse(localStorage.getItem('koyou_history_' + targetId) || '[]');
+        history.forEach(msg => renderMessage(msg.text, msg.type, msg.time));
+        chatTimeline.scrollTop = chatTimeline.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
     sendBtn.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+    document.getElementById('back-btn').addEventListener('click', () => window.history.back());
 
-    // Enterキーでの送信
-    messageInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-
-    // 戻るボタン
-    document.getElementById('back-btn').addEventListener('click', () => {
-        window.history.back();
-    });
-
-    // ナビゲーションボタン
     const navLinks = {
         'nav-chat': '../koyou-chat/koyou-chat.html',
         'nav-home': '../koyou-home/koyou-home.html',
@@ -69,6 +66,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn) btn.addEventListener('click', () => window.location.href = navLinks[id]);
     });
 
-    // 初期表示時に一番下へスクロール
     chatTimeline.scrollTop = chatTimeline.scrollHeight;
 });

@@ -8,35 +8,35 @@
 </head>
 <body>
     <div class="app-container">
-        <header class="header">
-            <h1 class="page-title">チャット</h1>
+        <header class="chat-header">
+            <h1 class="header-title">チャット</h1>
         </header>
 
-        <main class="main-content">
+        <main class="chat-content">
             <div class="chat-list">
-                <div class="chat-item" data-user="鈴木 太郎">
-                    <p class="chat-text">鈴木 太郎：了解しました！</p>
+                <div class="chat-item" data-target="suzuki" data-name="鈴木 太郎">
+                    <p class="chat-preview">鈴木 太郎</p>
                 </div>
 
-                <div class="chat-item" data-user="福尾 太郎">
-                    <p class="chat-text">福尾 太郎：10時から出勤です</p>
+                <div class="chat-item" data-target="fukuo" data-name="福尾 太郎">
+                    <p class="chat-preview">福尾 太郎</p>
                 </div>
 
-                <div class="chat-item" data-user="柴田 太郎">
-                    <p class="chat-text">柴田 太郎：</p>
+                <div class="chat-item" data-target="shibata" data-name="柴田 太郎">
+                    <p class="chat-preview">柴田 太郎</p>
                 </div>
 
-                <div class="chat-item" data-user="佐藤 花子">
-                    <p class="chat-text">佐藤 花子：お疲れ様です。</p>
+                <div class="chat-item" data-target="sato" data-name="佐藤 花子">
+                    <p class="chat-preview">佐藤 花子</p>
                 </div>
             </div>
         </main>
 
-        <div class="nav-bar">
+        <footer class="nav-bar">
             <button id="nav-chat" class="nav-button active">Chat</button>
             <button id="nav-home" class="nav-button">Home</button>
             <button id="nav-employee" class="nav-button">Employee</button>
-        </div>
+        </footer>
     </div>
     <script src="koyou-chat.js"></script>
 </body>
