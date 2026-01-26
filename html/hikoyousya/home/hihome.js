@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         monthText.innerText = `${year}年 ${monthNum}月`;
 
-        // 月と日付テキストの同期
+        // 今日の日付を取得（比較用に時刻を00:00:00にリセット）
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
         shiftCards.forEach(card => {
             const dateNum = card.getAttribute('data-date');
             card.querySelector('.card-date-text').innerText = `${monthNum}月${dateNum}日`;
@@ -42,11 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (isSelected) {
                             // 解除時：ボタンを隠す
                             addBtnContainer.style.display = 'none';
-                            shiftCards.forEach(card => { if(card.getAttribute('data-month') == monthNum) card.style.display = 'flex'; });
+                            shiftCards.forEach(card => { 
+                                if(card.getAttribute('data-month') == monthNum) card.style.display = 'flex'; 
+                            });
                         } else {
-                            // 選択時：ハートとボタンを出す
+                            // 選択時
                             cell.classList.add('selected');
-                            addBtnContainer.style.display = 'flex';
+                            
+                            // クリックした日付のオブジェクトを作成
+                            const clickedDate = new Date(year, month, curDate);
+                            
+                            // 【修正ポイント】今日より前（過去）ならボタンを表示しない
+                            if (clickedDate < today) {
+                                addBtnContainer.style.display = 'none';
+                            } else {
+                                addBtnContainer.style.display = 'flex';
+                            }
+
+                            // カードの絞り込み表示
                             shiftCards.forEach(card => {
                                 card.style.display = (card.getAttribute('data-date') == curDate && card.getAttribute('data-month') == monthNum) ? 'flex' : 'none';
                             });
@@ -62,39 +78,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 月切り替え
-    document.getElementById('prev-month').addEventListener('click', () => { displayDate.setMonth(displayDate.getMonth()-1); renderCalendar(); });
-    document.getElementById('next-month').addEventListener('click', () => { displayDate.setMonth(displayDate.getMonth()+1); renderCalendar(); });
+    document.getElementById('prev-month').addEventListener('click', () => { 
+        displayDate.setMonth(displayDate.getMonth()-1); 
+        addBtnContainer.style.display = 'none'; // 月移動時にボタンを隠す
+        renderCalendar(); 
+    });
+    document.getElementById('next-month').addEventListener('click', () => { 
+        displayDate.setMonth(displayDate.getMonth()+1); 
+        addBtnContainer.style.display = 'none'; // 月移動時にボタンを隠す
+        renderCalendar(); 
+    });
 
     // ✖ボタン遷移
     document.querySelectorAll('.cancel-icon').forEach(btn => {
-        btn.addEventListener('click', (e) => { e.stopPropagation(); window.location.href = '../sihutotorikesi/sihutotorikesi.html'; });
+        btn.addEventListener('click', (e) => { 
+            e.stopPropagation(); 
+            window.location.href = '../sihutotorikesi/sihutotorikesi.html'; 
+        });
     });
 
     // ナビゲーション
     document.getElementById('nav-chat').addEventListener('click', () => location.href = '../chaattosen/chatsen.html');
     document.getElementById('nav-mypage').addEventListener('click', () => location.href = '../mypage/mypage.html');
     document.getElementById('nav-home').addEventListener('click', () => location.href = '../home/hihome.html');
-    renderCalendar();
 
-    document.addEventListener('DOMContentLoaded', () => {
-    // 既存の renderCalendar などの処理...
-
-    // 【重要】追加ボタンのクリックイベント
+    // 追加ボタンのクリックイベント（パラメータ送信）
     const addBtn = document.querySelector('.add-action-btn');
-    addBtn.addEventListener('click', () => {
-        const selectedCell = document.querySelector('.calendar-table td.selected');
-        if (selectedCell) {
-            // カレンダーの状態から年月日を取得
-            const year = displayDate.getFullYear();
-            const month = displayDate.getMonth() + 1;
-            const day = selectedCell.innerText;
+    if (addBtn) {
+        addBtn.addEventListener('click', () => {
+            const selectedCell = document.querySelector('.calendar-table td.selected');
+            if (selectedCell) {
+                const year = displayDate.getFullYear();
+                const month = displayDate.getMonth() + 1;
+                const day = selectedCell.innerText;
+                window.location.href = `../sihutotuika/sihutotuika.html?y=${year}&m=${month}&d=${day}`;
+            } else {
+                alert("日付を選択してください");
+            }
+        });
+    }
 
-            // URLパラメータを付けて画面遷移
-            window.location.href = `../sihutotuika/sihutotuika.html?y=${year}&m=${month}&d=${day}`;
-        } else {
-            alert("日付を選択してください");
-        }
-    });
-});
-
+    renderCalendar();
 });
