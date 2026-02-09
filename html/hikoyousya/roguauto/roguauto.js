@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 勤務先解除（✖ボタン）の動作
+    // 勤務先解除
     const removeButtons = document.querySelectorAll('.remove-btn');
     removeButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {

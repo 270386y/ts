@@ -1,8 +1,7 @@
-/* 全体のリセット */
 body, html {
     margin: 0; padding: 0; width: 100%; height: 100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    background-color: #f2cccb; /* 背景ピンク */
+    background-color: #f2cccb; 
     overflow: hidden;
 }
 
@@ -19,13 +18,12 @@ body, html {
     font-size: 32px; font-weight: normal; color: #333; margin: 0;
 }
 
-/* リストアイテム */
 .logout-content {
     flex: 1; overflow-y: auto; padding: 0 20px;
 }
 
 .workplace-item {
-    background-color: #fff0f5; /* 非常に薄いピンク */
+    background-color: #fff0f5; 
     width: 100%; max-width: 400px;
     margin: 0 auto 15px; padding: 15px 20px;
     border-radius: 12px;
@@ -37,7 +35,7 @@ body, html {
 
 .workplace-item:hover {
     background-color: #fceef3;
-    transform: translateX(5px); /* 少し右にずれる演出 */
+    transform: translateX(5px);
 }
 
 .workplace-name {
@@ -47,14 +45,14 @@ body, html {
 /* ✖ボタン */
 .remove-btn {
     background: none; border: none;
-    color: #f8bbd0; /* の active色 */
+    color: #f8bbd0; 
     font-size: 35px; font-weight: bold;
     cursor: pointer; transition: all 0.2s ease;
     line-height: 1;
 }
 
 .remove-btn:hover {
-    color: #ff85b2; /* 鮮やかなピンク */
+    color: #ff85b2; 
     transform: scale(1.2) rotate(90deg);
 }
 
@@ -69,10 +67,10 @@ body, html {
 }
 
 .nav-button:hover {
-    background-color: #f8bbd0; /* ホバーで色を濃く */
+    background-color: #f8bbd0; 
     transform: translateY(-4px);
 }
 
 .nav-button.active {
-    background-color: #f8bbd0; /* 現在地 */
+    background-color: #f8bbd0; 
 }

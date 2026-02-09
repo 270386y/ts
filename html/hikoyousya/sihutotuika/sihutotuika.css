@@ -1,6 +1,4 @@
-/* --- 前回のコードに追加・修正する部分 --- */
 
-/* セレクトボックスを囲む枠 */
 .select-wrapper {
     position: relative;
     width: 100%;
@@ -9,20 +7,18 @@
 .pink-input {
     width: 100%;
     padding: 12px;
-    padding-right: 40px; /* 矢印と重ならないように右側を空ける */
+    padding-right: 40px; 
     border-radius: 12px;
     border: 3px solid #1a1a1a;
     font-size: 16px;
     font-weight: bold;
     background-color: #fff;
     cursor: pointer;
-    /* ブラウザ標準の矢印を消す */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
-/* 自作の ▽ 矢印 */
 .select-arrow {
     position: absolute;
     right: 15px;
@@ -30,11 +26,11 @@
     transform: translateY(-50%);
     font-size: 14px;
     color: #1a1a1a;
-    pointer-events: none; /* 矢印を触ってもセレクトボックスが反応するように */
+    pointer-events: none; 
     font-weight: bold;
 }
 
-/* エラー時のスタイル（前回の続き） */
+/* エラー */
 .error-border {
     border: 3px solid #ff0000 !important;
     background-color: #fff0f0 !important;
@@ -47,7 +43,7 @@
     75% { transform: translateX(5px); }
 }
 
-/* その他、全体設定などは前回と同じ */
+
 body, html {
     margin: 0; padding: 0; width: 100%; height: 100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;

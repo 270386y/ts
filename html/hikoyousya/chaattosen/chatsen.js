@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // チャット項目のクリックイベント
+    // チャット
     const chatItems = document.querySelectorAll('.chat-item');
     chatItems.forEach(item => {
         item.addEventListener('click', () => {

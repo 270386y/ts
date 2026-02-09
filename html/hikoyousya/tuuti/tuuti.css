@@ -2,7 +2,7 @@
 body, html {
     margin: 0; padding: 0; width: 100%; height: 100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    background-color: #f2cccb; /* 背景ピンク */
+    background-color: #f2cccb; 
     overflow: hidden;
 }
 
@@ -10,7 +10,7 @@ body, html {
     display: flex; flex-direction: column; height: 100vh;
 }
 
-/* ヘッダーの設定 */
+/* ヘッダー */
 .tuti-header {
     padding: 40px 25px 10px;
     display: flex;
@@ -24,7 +24,7 @@ body, html {
 
 .close-icon {
     background: none; border: none;
-    color: #f8bbd0; /* の active色に近いピンク */
+    color: #f8bbd0; 
     font-size: 45px; font-weight: bold;
     cursor: pointer; transition: transform 0.2s, color 0.2s;
 }
@@ -41,10 +41,10 @@ body, html {
 }
 
 .notification-card {
-    background-color: #fff0f5; /* 非常に薄いピンク */
+    background-color: #fff0f5; 
     width: 85%; max-width: 360px;
     padding: 30px 20px; border-radius: 35px;
-    text-align: left; /* 画像に合わせて左寄せ */
+    text-align: left; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
@@ -67,7 +67,7 @@ body, html {
 }
 
 .nav-button:hover {
-    background-color: #f8bbd0; /* ホバーで色を濃く */
+    background-color: #f8bbd0; 
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }

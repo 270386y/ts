@@ -1,4 +1,3 @@
-/* 全体のリセット */
 body, html {
     margin: 0;
     padding: 0;
@@ -7,7 +6,7 @@ body, html {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
-/* 画像どおりの背景色 */
+/* 背景 */
 .splash-screen {
     width: 100%;
     height: 100vh;
@@ -37,11 +36,11 @@ body, html {
     color: white;
     font-size: 14px;
     margin-top: 10px;
-    margin-bottom: 30px; /* ボタンとの間隔 */
+    margin-bottom: 30px;
     letter-spacing: 1px;
 }
 
-/* はじめるボタンのスタイル */
+/* はじめるボタン */
 .start-button {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;

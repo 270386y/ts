@@ -1,8 +1,7 @@
-/* 全体の設定 */
 body, html {
     margin: 0; padding: 0; width: 100%; height: 100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    background-color: #f2cccb; /* 背景ピンク */
+    background-color: #f2cccb; 
     overflow: hidden;
 }
 
@@ -10,16 +9,15 @@ body, html {
     display: flex; flex-direction: column; height: 100vh;
 }
 
-/* メインコンテンツの中央配置 */
 .confirm-content {
     flex: 1; display: flex; flex-direction: column;
     justify-content: center; align-items: center;
     padding: 0 20px;
 }
 
-/* 警告カード */
+/* 警告 */
 .alert-card {
-    background-color: #fce4ec; /* 薄ピンク白 */
+    background-color: #fce4ec; 
     width: 90%; max-width: 350px;
     padding: 30px 10px; border-radius: 15px;
     position: relative; text-align: center;
@@ -36,12 +34,12 @@ body, html {
 
 .alert-text { font-size: 22px; font-weight: bold; margin: 0; }
 
-/* シフトカード：文字を中央寄せに修正 */
+/* シフトカード */
 .shift-card {
-    background-color: #ff85b2; /* 鮮やかなピンク */
+    background-color: #ff85b2; 
     width: 80%; max-width: 320px;
     border-radius: 20px; padding: 25px 15px;
-    margin-bottom: 50px; text-align: center; /* 文字を真ん中に */
+    margin-bottom: 50px; text-align: center; 
     border: 3px solid #1a1a1a; color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -51,7 +49,7 @@ body, html {
 .company-name { font-size: 16px; }
 .shift-time { font-size: 20px; letter-spacing: 1px; }
 
-/* 実行ボタン */
+/* 実行 */
 .action-btn {
     background-color: #fce4ec;
     width: 85%; max-width: 330px;
@@ -62,7 +60,7 @@ body, html {
 }
 
 .action-btn:hover {
-    background-color: #f8bbd0; /* ホバーで少し濃いピンク */
+    background-color: #f8bbd0; 
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }

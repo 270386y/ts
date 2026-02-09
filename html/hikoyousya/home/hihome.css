@@ -1,14 +1,13 @@
-/* 全体設定 */
 body, html {
     margin: 0; padding: 0; width: 100%; height: 100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    background-color: #f2cccb; /* 背景薄ピンク維持 */
+    background-color: #f2cccb; 
     overflow: hidden;
 }
 
 .app-container { display: flex; flex-direction: column; height: 100vh; }
 
-/* カレンダーデザイン */
+/* カレンダー */
 .calendar-section {
     background-color: #fff; margin: 30px 20px 15px; padding: 15px;
     border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -32,7 +31,7 @@ body, html {
 .calendar-table th { padding: 5px 0; color: #888; font-size: 12px; }
 .sun { color: #ff8a8a !important; } .sat { color: #8a8aff !important; }
 
-/* 日付セルとハート演出 */
+/* ハート */
 .calendar-table td {
     position: relative; width: 40px; height: 40px; cursor: pointer;
     font-weight: bold; z-index: 1; transition: color 0.3s; vertical-align: middle;
@@ -47,7 +46,7 @@ body, html {
     z-index: -1; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* ホバー & 選択時のハート */
+/* ハート */
 .calendar-table td:not(:empty):hover, .calendar-table td.selected { color: #fff; }
 .calendar-table td:not(:empty):hover::before, .calendar-table td.selected::before {
     transform: translate(-50%, -50%) scale(1.8); opacity: 1;
@@ -67,7 +66,6 @@ body, html {
 .company-name { font-size: 16px; margin: 5px 0; font-weight: bold; }
 .shift-time { font-size: 20px; font-weight: bold; margin: 0; }
 
-/* ステータス・アクションエリア */
 .status-area {
     display: flex;
     align-items: center;
@@ -82,17 +80,17 @@ body, html {
     cursor: pointer; 
 }
 
-/* ボタンの色設定 */
-.status-btn.green { background-color: #48c774; color: #fff; } /* 承諾済み：最も分かりやすい鮮やかな緑に変更 */
-.status-btn.blue { background-color: #b4d4e4; color: #1a1a1a; } /* 承諾待ち：水色維持 */
-.status-btn.edit-btn { background-color: #ffd1df; color: #1a1a1a; } /* 編集ボタン維持 */
+/* ボタンの色 */
+.status-btn.green { background-color: #48c774; color: #fff; } 
+.status-btn.blue { background-color: #b4d4e4; color: #1a1a1a; } 
+.status-btn.edit-btn { background-color: #ffd1df; color: #1a1a1a; } 
 
-/* バツボタンのスタイル */
+/* バツボタン */
 .cancel-icon {
     background: none;
     border: none;
     padding: 0;
-    color: #ff0000; /* 鮮やかな赤色維持 */
+    color: #ff0000; 
     font-size: 30px;
     font-weight: bold;
     margin-left: 10px;
@@ -105,7 +103,7 @@ body, html {
 
 .cancel-icon:hover { transform: scale(1.2) rotate(90deg); }
 
-/* シフト追加ボタンコンテナ */
+/* シフト追加ボタン */
 .add-btn-container {
     display: flex;
     justify-content: center;
@@ -118,7 +116,7 @@ body, html {
     100% { opacity: 1; transform: scale(1); }
 }
 
-/* シフト追加ボタン本体 */
+/* シフト追加ボタン */
 .add-action-btn {
     background-color: #ff85b2;
     color: #fff;
@@ -128,7 +126,7 @@ body, html {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 5px 0 #1a1a1a; /* 立体的な影維持 */
+    box-shadow: 0 5px 0 #1a1a1a; 
     transition: all 0.2s ease;
 }
 
@@ -150,7 +148,7 @@ body, html {
     background-color: #fce4ec; 
     font-size: 22px; 
     font-weight: bold; 
-    font-family: serif; /* セリフ体維持 */
+    font-family: serif; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
     transition: all 0.3s ease; 
     cursor: pointer;

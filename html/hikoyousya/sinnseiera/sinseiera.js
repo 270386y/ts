@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 戻る（✖ボタン）
+    // 戻る
     document.getElementById('close-btn').addEventListener('click', () => {
         window.history.back();
     });

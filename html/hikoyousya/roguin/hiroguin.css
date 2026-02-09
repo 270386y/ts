@@ -5,7 +5,7 @@ body, html {
 
 .login-screen {
     width: 100%; height: 100vh;
-    background-color: #f2cccb; /* */
+    background-color: #f2cccb; 
     display: flex; justify-content: center; align-items: center;
 }
 
@@ -13,13 +13,13 @@ body, html {
 
 .title-text { font-size: 28px; color: #333; margin-bottom: 60px; }
 
-/* 入力欄とボタンの共通スタイル */
+/* ボタン */
 .input-field, .action-button {
     width: 100%; height: 60px; margin-bottom: 25px;
     border-radius: 15px; border: none; font-size: 24px;
     font-weight: bold; text-align: center; box-sizing: border-box;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease; /* ホバー時の変化を滑らかに */
+    transition: all 0.3s ease; 
 }
 
 .input-field { background-color: #fce4ec; outline: none; }
@@ -28,15 +28,15 @@ body, html {
 .action-button { background-color: #fce4ec; color: #000; cursor: pointer; font-family: serif; }
 .action-button.back { font-family: sans-serif; margin-top: 30px; }
 
-/* --- ホバー（マウス合わせ）時の色変更 --- */
+/*　マウス合わせたとき */
 .input-field:hover {
     background-color: #ffffff;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .action-button:hover {
-    background-color: #f8bbd0; /* の active色 */
-    transform: translateY(-2px); /* 少し浮き上がる */
+    background-color: #f8bbd0; 
+    transform: translateY(-2px); 
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 

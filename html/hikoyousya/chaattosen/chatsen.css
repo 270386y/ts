@@ -1,8 +1,7 @@
-/* 全体のリセット */
 body, html {
     margin: 0; padding: 0; width: 100%; height: 100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    background-color: #f2cccb; /* 背景ピンク */
+    background-color: #f2cccb; 
     overflow: hidden;
 }
 
@@ -37,7 +36,7 @@ body, html {
 
 /* チャット項目へのホバー演出 */
 .chat-item:hover {
-    background-color: #f8bbd0; /* の active色 */
+    background-color: #f8bbd0; 
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
@@ -63,5 +62,5 @@ body, html {
 }
 
 .nav-button.active {
-    background-color: #f8bbd0; /* 現在地を示す */
+    background-color: #f8bbd0; 
 }

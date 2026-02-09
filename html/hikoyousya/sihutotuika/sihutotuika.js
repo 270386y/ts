@@ -25,12 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 保存データに status を追加
         const data = { 
             year, month, day, 
             company: companySelect.value, 
             time: `${sTime}〜${eTime}`,
-            status: '承諾待ち' // 初期ステータス
+            status: '承諾待ち'
         };
         
         const isOverlap = shifts.some((s, i) => {

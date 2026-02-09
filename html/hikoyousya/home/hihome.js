@@ -6,11 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let displayDate = new Date();
 
-    // 保存されたシフトを読み込んでカードを作成する関数
     function loadSavedShifts() {
         const shifts = JSON.parse(localStorage.getItem('user_shifts') || '[]');
         
-        // 重複表示を防ぐため、動的に追加されたカードのみを一旦削除
+        // 重複防止
         const existingDynamicCards = shiftList.querySelectorAll('.dynamic-shift');
         existingDynamicCards.forEach(c => c.remove());
 
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.display = (m == monthNum) ? 'flex' : 'none';
         });
 
-        // 今日の日付を取得（比較用に時刻をリセット）
+        // 今日の日付
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
